@@ -18,26 +18,32 @@ public class Game {
 
     @Column(name = "game_year")
     private Integer year;
-    private String gente;
-    private String platform;
+    private String genre;
+    private String platforms;
+    private Double score;
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
-    private String logDescription;
+
+    @Column(columnDefinition = "TEXT")
+    private String longDescription;
 
     public Game() {
 
     }
 
-    public Game(Long id, String title, Integer year, String gente, String platform, String imgUrl,
-            String shortDescription, String logDescription) {
+    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
+            String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
-        this.gente = gente;
-        this.platform = platform;
+        this.genre = genre;
+        this.platforms = platforms;
+        this.score = score;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
-        this.logDescription = logDescription;
+        this.longDescription = longDescription;
     }
 
     public Long getId() {
@@ -64,20 +70,28 @@ public class Game {
         this.year = year;
     }
 
-    public String getGente() {
-        return gente;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGente(String gente) {
-        this.gente = gente;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public String getPlatform() {
-        return platform;
+    public String getPlatforms() {
+        return platforms;
     }
 
-    public void setPlatform(String platform) {
-        this.platform = platform;
+    public void setPlatform(String platforms) {
+        this.platforms = platforms;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
     }
 
     public String getImgUrl() {
@@ -96,12 +110,12 @@ public class Game {
         this.shortDescription = shortDescription;
     }
 
-    public String getLogDescription() {
-        return logDescription;
+    public String getLongDescription() {
+        return longDescription;
     }
 
-    public void setLogDescription(String logDescription) {
-        this.logDescription = logDescription;
+    public void setLogDescription(String longDescription) {
+        this.longDescription = longDescription;
     }
 
     @Override
